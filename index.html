@@ -1,91 +1,370 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ausbildung – Personal Guide</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ausbildung in Germany | Work, Learn, Build Your Future</title>
 
-  <!-- Makes the site responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
 
-  <header>
-    <h1>Ausbildung</h1>
-    <p class="subtitle">A personal, offline-friendly guide</p>
-  </header>
+<!-- ================= HEADER / NAV ================= -->
+<header class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">Ausbildung<span>Germany</span></div>
 
-  <main>
+    <button id="darkModeToggle" class="btn-toggle">Dark Mode</button>
 
-    <section>
-      <h2>What is Ausbildung?</h2>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>Journey To Germany</h1>
+  </div>
+</section>
+
+<!-- ================= WHY AUSBILDUNG ================= -->
+<section class="section light">
+  <div class="container">
+    <h2>Why Choose an “Ausbildung” in Germany?</h2>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <img src="icons/euro.svg" alt="">
+        <h3>Earn While You Learn</h3>
+        <p>Receive a monthly salary while completing your vocational training.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="icons/briefcase.svg" alt="">
+        <h3>Practical Experience</h3>
+        <p>Hands-on training directly inside German companies.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="icons/graduation.svg" alt="">
+        <h3>Globally Recognized</h3>
+        <p>German vocational qualifications are respected worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT IS AUSBILDUNG ================= -->
+<section class="section">
+  <div class="container split">
+    <div>
+      <h2>What is Ausbildung in Germany?</h2>
       <p>
         Ausbildung is Germany’s dual vocational training system that combines
-        paid practical work with formal classroom education.
+        real-world company work (3–4 days/week) with classroom education
+        at a vocational school (1–2 days/week).
       </p>
-    </section>
-
-    <section>
-      <h2>Who is it for?</h2>
       <p>
-        Ausbildung is suitable for individuals who want practical skills,
-        early work experience, and a pathway to long-term employment in Germany.
+        Trainees receive a monthly allowance and gain job-ready skills
+        in high-demand industries.
       </p>
-    </section>
+    </div>
 
-    <section>
-      <h2>Basic Requirements</h2>
-      <ul>
-        <li>Completed secondary education</li>
-        <li>German language level (A2–B1, depending on field)</li>
-        <li>Training contract from a German employer</li>
-        <li>Valid passport and visa</li>
-      </ul>
-    </section>
+    <div class="image-box">
+      <img src="images/hero.jpg" alt="Germany training">
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>Application Process</h2>
-      <ol>
-        <li>Learn German</li>
-        <li>Prepare CV and certificates</li>
-        <li>Apply to Ausbildung programs</li>
-        <li>Sign a training contract</li>
-        <li>Apply for a German visa</li>
-      </ol>
-    </section>
+<!-- ================= ELIGIBILITY ================= -->
+<section class="section light">
+  <div class="container">
+    <h2>Who Can Apply for Ausbildung in Germany?</h2>
 
-    <section>
-      <h2>Popular Ausbildung Fields</h2>
-      <p>
-        Common Ausbildung fields include Nursing, IT, Mechatronics,
-        Hospitality, and other technical trades.
-      </p>
-    </section>
+    <ul class="checklist">
+      <li>Completed secondary or tertiary education</li>
+      <li>German language level B1–B2</li>
+      <li>Willingness to live and work in Germany</li>
+      <li>Eligible for training visa</li>
+    </ul>
 
-    <section>
-      <h2>Salary & Reality</h2>
-      <p>
-        Trainees receive a monthly allowance that increases each year.
-        While this helps with living costs, budgeting and financial planning
-        are essential.
-      </p>
-    </section>
+    <a href="#apply" class="btn-primary">Check Your Eligibility</a>
+  </div>
+</section>
 
-    <section>
-      <h2>Personal Notes</h2>
-      <p>
-        This webpage serves as a personal reference for organizing information,
-        tracking progress, and setting realistic expectations about Ausbildung.
-      </p>
-    </section>
+<!-- ================= HIGH DEMAND PROGRAMS ================= -->
+<section class="section" id="programs">
+  <div class="container">
+    <h2>High-Demand Ausbildung Programs</h2>
 
-  </main>
+    <div class="program-grid">
+      <div class="program-card">
+        <img src="images/healthcare.jpg" alt="">
+        <h3>Healthcare & Nursing</h3>
+      </div>
 
-  <footer>
-    <p>Personal reference file · Works offline · HTML & CSS only</p>
-  </footer>
+      <div class="program-card">
+        <img src="images/it.jpg" alt="">
+        <h3>IT & Technology</h3>
+      </div>
+
+      <div class="program-card">
+        <img src="images/engineering.jpg" alt="">
+        <h3>Engineering & Manufacturing</h3>
+      </div>
+
+      <div class="program-card">
+        <img src="images/hospitality.jpg" alt="">
+        <h3>Hospitality & Tourism</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LANGUAGE REQUIREMENTS ================= -->
+<section class="section light">
+  <div class="container">
+    <h2>What Are the Language Requirements?</h2>
+    <p>
+      Most programs require German language proficiency at B1–B2 level.
+      Accepted certificates include Goethe-Institut, telc, and ÖSD.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= APPLICATION PROCESS ================= -->
+<section class="section" id="process">
+  <div class="container">
+    <h2>Your Step-by-Step Ausbildung Application Process</h2>
+
+    <div class="steps">
+      <div class="step">Check Eligibility</div>
+      <div class="step">Prepare Documents</div>
+      <div class="step">Language Preparation</div>
+      <div class="step">Apply to Positions</div>
+      <div class="step">Interview Preparation</div>
+      <div class="step">Track & Follow Up</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUPPORT ================= -->
+<section class="section light" id="support">
+  <div class="container">
+    <h2>What Support Is Included?</h2>
+
+    <div class="feature-grid">
+      <div class="feature-card">Smart Application Tools</div>
+      <div class="feature-card">CV & Cover Letter Builder</div>
+      <div class="feature-card">Interview Coaching</div>
+      <div class="feature-card">German Language Training</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PODCAST ================= -->
+<div class="podcast-list">
+  <div class="podcast">
+    <img src="podcast1.jpg" alt="Podcast Cover">
+    <div class="podcast-content">
+      <h4>What to Expect in Your First Week</h4>
+      <p>Tips and insights for your first days as an Ausbildung trainee in Germany.</p>
+    </div>
+    <div class="podcast-play">▶</div>
+  </div>
+
+  <div class="podcast">
+    <img src="podcast2.jpg" alt="Podcast Cover">
+    <div class="podcast-content">
+      <h4>German Language Tips for Apprentices</h4>
+      <p>Learn how to quickly improve your German to succeed in your Ausbildung.</p>
+    </div>
+    <div class="podcast-play">▶</div>
+  </div>
+
+  <!-- Add more podcasts similarly -->
+</div>
+
+<!-- ================= GUIDE ================= -->
+<section id="guide" class="section">
+  <div class="container">
+    <h2>Guide to Studying and Training in Germany</h2>
+
+    <div class="guide-grid">
+      <!-- Step 1 -->
+      <div class="guide-step">
+        <img src="step1.jpg" alt="Step 1: Learn German" class="guide-img">
+        <div class="guide-text">
+          <h3>Step 1: Learn the German Language</h3>
+          <p>The first and most important step is learning German. Since Ausbildung combines classroom learning with hands-on training, you'll need at least a B1 level of proficiency, with some programs requiring B2. <br><br>Not sure where to start? Learn German PH offers courses from A1 to B2, designed to help you pass certification exams like Goethe or Telc. Mastering German is your gateway to Ausbildung success.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="guide-step">
+        <img src="step2.jpg" alt="Step 2: Check Eligibility" class="guide-img">
+        <div class="guide-text">
+          <h3>Step 2: Check If You’re Eligible</h3>
+          <p>High School Graduates – You can apply right after finishing high school.<br>
+             College Undergraduates – Switch career paths.<br>
+             Career Shifters – You can train in a different field.<br>
+             No matter your background, there’s an Ausbildung program for you.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="guide-step">
+        <img src="step3.jpg" alt="Step 3: Choose Your Course" class="guide-img">
+        <div class="guide-text">
+          <h3>Step 3: Choose Your Ausbildung Course</h3>
+          <p>Germany offers over 300 Ausbildung programs across various industries. Healthcare, IT & Technology, Hospitality & Culinary, Business & Administration. Think about your interests and career goals when choosing your Ausbildung course.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="guide-step">
+        <img src="step4.jpg" alt="Step 4: Find Employer" class="guide-img">
+        <div class="guide-text">
+          <h3>Step 4: Find an Ausbildung Employer</h3>
+          <p>Search job portals like Make it in Germany, Bundesagentur für Arbeit, and Indeed.de.<br>
+             Work with agencies that specialize in Ausbildung placements.<br>
+             Network with people who have already gone through the process.<br>
+             Once you find a company, you’ll receive an Ausbildungsvertrag (training contract), required for your visa application.</p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="guide-step">
+        <img src="step5.jpg" alt="Step 5: Prepare Documents" class="guide-img">
+        <div class="guide-text">
+          <h3>Step 5: Prepare Your Documents</h3>
+          <p>German Language Certificate (B1/B2), High School Diploma (Apostilled & Translated), Updated CV (German format), Motivation Letter (Anschreiben), Passport & Photos, Visa Documents. Double-check specific program requirements.</p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="guide-step">
+        <img src="step6.jpg" alt="Step 6: Apply for Visa" class="guide-img">
+        <div class="guide-text">
+          <h3>Step 6: Apply for Your Visa</h3>
+          <p>Once you have your Ausbildung contract and documents ready, apply for a German National Visa at the German Embassy. Apply early, as processing times can vary.</p>
+        </div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="guide-step">
+        <img src="step7.jpg" alt="Step 7: Move to Germany" class="guide-img">
+        <div class="guide-text">
+          <h3>Step 7: Move to Germany & Begin Your Ausbildung!</h3>
+          <p>Once your visa is approved, pack your bags. Ausbildung programs last 2–3.5 years. After completion, you can further your studies or seek employment opportunities in Germany.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= FAQ ================= -->
+<section class="section light" id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>What is Ausbildung?</summary>
+      <p>A paid vocational training system combining work and study.</p>
+    </details>
+
+    <details>
+      <summary>Do I get paid during Ausbildung?</summary>
+      <p>Yes, trainees receive a monthly salary.</p>
+    </details>
+
+    <details>
+      <summary>Can I stay in Germany after completion?</summary>
+      <p>Yes, many trainees receive permanent job offers.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Ausbildung Germany</h4>
+      <p>Work. Learn. Build a future in Germany.</p>
+    </div>
+
+    <div>
+      <h4>Links</h4>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div>
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.getElementById('darkModeToggle');
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  
+  // Optional: change button text
+  if(document.body.classList.contains('dark-mode')) {
+    toggle.textContent = 'Light Mode';
+  } else {
+    toggle.textContent = 'Dark Mode';
+  }
+});
+</script>
+
+<script>
+const steps = document.querySelectorAll('.guide-step');
+const modal = document.createElement('div');
+modal.classList.add('modal');
+modal.innerHTML = `<div class="modal-content"><span class="modal-close">&times;</span><div class="modal-body"></div></div>`;
+document.body.appendChild(modal);
+
+const modalBody = modal.querySelector('.modal-body');
+const modalClose = modal.querySelector('.modal-close');
+
+steps.forEach(step => {
+  step.addEventListener('click', () => {
+    modalBody.innerHTML = step.querySelector('.guide-text').innerHTML;
+    modal.style.display = 'flex';
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) modal.style.display = 'none';
+});
+</script>
+
 
 </body>
 </html>
