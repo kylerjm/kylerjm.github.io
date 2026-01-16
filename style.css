@@ -128,7 +128,7 @@ a {
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(26, 43, 60, 0.95);
+  background: var(--primary);
   z-index: 1000;
   padding: 1rem 0;
 }
@@ -141,7 +141,7 @@ a {
 
 .logo {
   font-weight: 700;
-  color: var(--text-light);
+  color: #fff;
   font-size: 1.4rem;
 }
 
@@ -149,6 +149,7 @@ a {
   color: var(--accent);
 }
 
+/* Navigation links */
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -156,13 +157,70 @@ a {
 }
 
 .nav-links a {
-  color: var(--text-light);
+  color: #fff;
   font-weight: 500;
+  transition: 0.3s;
 }
 
 .nav-links a:hover {
   color: var(--accent);
 }
+
+/* Dark Mode adjustments */
+body.dark-mode .nav-links a {
+  color: #f2f2f2;
+}
+
+/* Dark Mode Toggle Button */
+.btn-toggle {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-toggle:hover {
+  background: #b06b28;
+}
+
+/* Responsive: Hamburger menu for mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none; /* can toggle with JS if you want hamburger to open menu */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--primary);
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 
 /* ================= HERO ================= */
 .hero {
@@ -412,11 +470,57 @@ a {
   color: var(--accent);
 }
 
+.guide-pdf-link {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.guide-pdf-link a {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.guide-pdf-link a:hover {
+  color: #ffb84d; /* slightly lighter accent on hover */
+}
+
+.guide-pdf-card {
+  max-width: 500px;
+  margin: 2rem auto; /* centers it horizontally */
+  padding: 1rem 1.5rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.guide-pdf-card a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.guide-pdf-card a:hover {
+  color: #ffb84d;
+  text-decoration: underline;
+}
+
+body.dark-mode .guide-pdf-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+
 @media (max-width: 768px) {
   .guide-grid {
     grid-template-columns: 1fr;
   }
 }
+
+
 
 
 
@@ -587,6 +691,8 @@ a {
   border-radius: 3px;
 }
 
+
+
 /* ================= RESPONSIVE: RESOURCES GRID ================= */
 @media (max-width: 768px) {
   .resources-grid {
@@ -599,21 +705,187 @@ a {
 }
 
 
-
-
-
-/* ================= FAQ ================= */
-details {
-  background: var(--card-bg);
-  padding: 1.2rem;
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
+/* ================= Learning Materials ================= */
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
 }
 
-summary {
+.language-card {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.language-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+
+/* ================= ABOUT ME ================= */
+#about-me {
+  width: 100%;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center; /* centers the content horizontally */
+}
+
+#about-me .about-content {
+  max-width: 800px; /* restricts width for readability */
+  text-align: justify; /* paragraphs still justified */
+  line-height: 1.8;
+}
+
+#about-me h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+#about-me p {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  #about-me {
+    padding: 3rem 1rem;
+  }
+
+  #about-me .about-content {
+    max-width: 100%;
+  }
+}
+
+/* ================= PODCAST SCROLL ================= */
+.podcast-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.podcast-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.podcast-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+
+.podcast-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.podcast {
+  min-width: 250px; /* width of each card */
+  flex: 0 0 auto;   /* prevent shrinking */
+  background: var(--secondary);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.podcast:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.podcast img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.podcast-content h4 {
+  font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.podcast-content p {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.podcast-play {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-top: 0.5rem;
   cursor: pointer;
 }
+
+
+
+
+/* FAQ Cards Grid */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* FAQ Card Styling */
+.faq-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.faq-card summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.faq-card p {
+  margin-top: 0.5rem;
+  color: var(--text-color);
+}
+
+/* Smooth open/close animation */
+.faq-card[open] p {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Dark Mode Support */
+body.dark-mode .faq-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
 
 /* ================= FOOTER ================= */
 .footer {
