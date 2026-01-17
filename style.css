@@ -883,7 +883,9 @@ body.dark-mode .guide-pdf-card {
   }
 }
 
-
+.text-center {
+  text-align: center;
+}
 
 
 /* FAQ Cards Grid */
