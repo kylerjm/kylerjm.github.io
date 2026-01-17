@@ -121,29 +121,21 @@ a:hover {
 .btn-secondary { ... }
 
 /* ================= DARK MODE TOGGLE BUTTON ================= */
-.btn-toggle {
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px; /* pill shape */
-  border: 2px solid var(--accent);
- background: none;
-  border: none;
-  font-size: 1.4rem;
-  color: var(--accent);
+.dark-mode-toggle {
+  font-size: 1.6rem;
+  background: rgba(0,0,0,0.3); /* remove box */
+  border-radius: 50%;     /* remove border */
+  padding: 0.3rem;
+  color: #fff;      /* or var(--text-color) */
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  position: fixed; /* optional: stays visible */
-  top: 1rem;
-  right: 1rem;
-  z-index: 2000;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.btn-toggle:hover {
-  background: var(--accent);
-  color: var(--text-light);
-  transform: scale(1.15);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+.dark-mode-toggle:hover {
+  transform: scale(1.2);
+  color: var(--accent); /* optional hover color */
 }
+
 
 
 /* ================= NAVBAR ================= */
@@ -361,6 +353,11 @@ a:hover {
   color: var(--text-light); /* force white */
   text-shadow: 3px 3px 10px rgba(0,0,0,0.8); /* stronger shadow for readability */
   padding: 0 1rem;
+}
+
+body:not(.dark-mode) .hero-text h1 {
+  color: #e6eef5; /* soft off-white */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
 /* ================= STATS ================= */
@@ -637,112 +634,7 @@ body.dark-mode .guide-pdf-card {
 
 
 
-/* ================= PODCAST ================= */
-.podcast-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem 0;
-}
 
-/* Individual podcast card */
-.podcast {
-  background: var(--card-bg);
-  border-radius: 1rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  cursor: pointer;
-}
-
-/* Hover effect */
-.podcast:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-}
-
-/* Podcast image */
-.podcast img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-/* Podcast content container */
-.podcast-content {
-  padding: 1rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-/* Podcast title */
-.podcast-content h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-color);
-}
-
-/* Podcast description */
-.podcast-content p {
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.4;
-}
-
-/* Play button overlay (optional) */
-.podcast-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--accent);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  font-size: 1.2rem;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.podcast:hover .podcast-play {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .podcast-list {
-    grid-template-columns: 1fr;
-  }
-
-  .podcast img {
-    height: 180px;
-  }
-
-  .podcast-content h4 {
-    font-size: 1.1rem;
-  }
-
-  .podcast-content p {
-    font-size: 0.85rem;
-  }
-
-  .podcast-play {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
-  }
-}
 
 /* ================= RESOURCES GRID ================= */
 .resources-grid {
@@ -891,8 +783,9 @@ body.dark-mode .guide-pdf-card {
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .podcast-scroll::-webkit-scrollbar {
@@ -909,12 +802,14 @@ body.dark-mode .guide-pdf-card {
 }
 
 .podcast {
-  min-width: 250px; /* width of each card */
-  flex: 0 0 auto;   /* prevent shrinking */
-  background: var(--secondary);
+  flex: 0 0 250px;
+  background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -940,11 +835,52 @@ body.dark-mode .guide-pdf-card {
   color: var(--muted);
 }
 
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .podcast-play {
   font-size: 1.5rem;
   color: var(--accent);
-  margin-top: 0.5rem;
+  background: none;
+  border: none;
   cursor: pointer;
+  flex-shrink: 0;
+}
+
+.audio-slider {
+  flex: 1;
+  cursor: pointer;
+  height: 5px;
+  border-radius: 5px;
+  background: #ccc;
+}
+
+.audio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.audio-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .podcast {
+    flex: 0 0 200px;
+  }
 }
 
 
